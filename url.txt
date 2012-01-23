@@ -1,0 +1,6 @@
+Annie Lee
+CIS 196
+January 16, 2011
+Homework 1 (Rails Hello World)
+
+heroku URL: http://annie-expenseapp.heroku.com/
