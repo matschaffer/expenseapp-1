@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Annie's Expense App</title>
-    <style type="text/css">
-    </style>
-    <script type="text/javascript">
-    </script>
+    <meta charset="utf-8" />
+    <title>Annie's App</title>
+    <!-- Included CSS Files -->
+	<link rel="stylesheet" href="assets/foundation.css">
+	<link rel="stylesheet" href="assets/app.css">
   </head>
   <body>
-  	<img src="http://www.lolcats.com/images/u/09/08/lolcatsdotcomhqjbsna7fyj5zgwt.jpg" alt="LOLCat"/>
+  	<div class="container">
+
+		<div class="row">
+			<div class="twelve columns">
+				<h2>CIS 196</h2>
+				<p>Annie Lee (yannie). Spring 2012</p>
+				<hr />
+			</div>
+		</div>
+		
+		<div class="row">
+			<h3>Assignments</h3>
+			<dl class="tabs">
+				<dd><a href="#hw1">Assignment 1</a></dd>
+				<dd><a href="#hw2" class="active">Assignment 2</a></dd>
+			</dl>
+			
+			<ul class="tabs-content">
+				<li id="hw1Tab"><img src="http://www.lolcats.com/images/u/09/08/lolcatsdotcomhqjbsna7fyj5zgwt.jpg" alt="LOLCat"/></li>
+				<li id="hw2Tab" class="active">
+					<p>Check out <a href="http://www.seriouseats.com/">Serious Eats</a> for food recommendations!</p>
+					<h4>Add a new restaurant!</h4>
+					<form class="nice">
+						<label>Restaurant Name</label>
+						<input type="text" class="input-text" />
+						<label>Location</label>
+						<input type="text" class="large input-text" />
+						<label>Date</label>
+						<input type="text" class="input-text" />
+						<label>Rating</label>
+						<select>
+							<option>Meh</option>
+							<option>Nom</option>
+							<option>Amazinggg</option>
+						</select>
+						<label>Food Review</label>
+						<textarea placeholder="Review of dishes tried..."></textarea>
+					</form>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- Included JS Files -->
+	<script src="assets/foundation.js"></script>
+	<script src="assets/app.js"></script>
   </body>
 </html>
