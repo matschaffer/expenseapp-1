@@ -1,0 +1,335 @@
+Annie Lee
+CIS 196
+January 23, 2011
+Homework 2 (HTML, CSS and Resources)
+
+github URL: https://github.com/yannie/expenseapp
+heroku URL: http://annie-expenseapp.heroku.com/
+
+********************************************************************************
+
+EXTRA CREDIT (using CURL):
+
+CREATE RESOURCE
+hrs356:expenseapp Annie$ rails generate scaffold restaurant name:string location:string review:text
+      invoke  active_record
+      create    db/migrate/20120123055314_create_restaurants.rb
+      create    app/models/restaurant.rb
+      invoke    test_unit
+      create      test/unit/restaurant_test.rb
+      create      test/fixtures/restaurants.yml
+       route  resources :restaurants
+      invoke  scaffold_controller
+      create    app/controllers/restaurants_controller.rb
+      invoke    erb
+      create      app/views/restaurants
+      create      app/views/restaurants/index.html.erb
+      create      app/views/restaurants/edit.html.erb
+      create      app/views/restaurants/show.html.erb
+      create      app/views/restaurants/new.html.erb
+      create      app/views/restaurants/_form.html.erb
+      invoke    test_unit
+      create      test/functional/restaurants_controller_test.rb
+      invoke    helper
+      create      app/helpers/restaurants_helper.rb
+      invoke      test_unit
+      create        test/unit/helpers/restaurants_helper_test.rb
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/restaurants.js.coffee
+      invoke    scss
+      create      app/assets/stylesheets/restaurants.css.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.css.scss
+hrs356:expenseapp Annie$ rake db:migrate
+==  CreateRestaurants: migrating ==============================================
+-- create_table(:restaurants)
+   -> 0.0016s
+==  CreateRestaurants: migrated (0.0016s) =====================================
+
+hrs356:expenseapp Annie$ rails server
+
+********************************************************************************
+
+GET REQUEST (list all restaurants --> initially, none)
+
+hrs356:expenseapp Annie$ curl localhost:3000/restaurants
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenseapp</title>
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/app.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/entries.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/foundation.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/ie.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/restaurants.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/app.js?body=1" type="text/javascript"></script>
+<script src="/assets/entries.js?body=1" type="text/javascript"></script>
+<script src="/assets/foundation.js?body=1" type="text/javascript"></script>
+<script src="/assets/restaurants.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="iuaLZktTmCaqm+GUOJZh8bufX0dl0JsGzrTcF/PNAwI=" name="csrf-token" />
+</head>
+<body>
+
+<h1>Listing restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Review</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+</table>
+
+<br />
+
+<a href="/restaurants/new">New Restaurant</a>
+
+
+</body>
+</html>
+
+********************************************************************************
+
+POST REQUEST (add a new restaurant)
+
+hrs356:expenseapp Annie$ curl -X POST -d "restaurant[name]=Chipotle&restaurant[location]=Philadelphia&restaurant[review]=yummy+burritos" localhost:3000/restaurants
+<html><body>You are being <a href="http://localhost:3000/restaurants/4">redirected</a>.</body></html>
+
+********************************************************************************
+
+GET REQUEST (lists all restaurants --> newly created restaurant "Chipotle" added to list)
+
+hrs356:expenseapp Annie$ curl localhost:3000/restaurants
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenseapp</title>
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/app.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/entries.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/foundation.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/ie.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/restaurants.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/app.js?body=1" type="text/javascript"></script>
+<script src="/assets/entries.js?body=1" type="text/javascript"></script>
+<script src="/assets/foundation.js?body=1" type="text/javascript"></script>
+<script src="/assets/restaurants.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="dnFnrXZAZaBZiaX3GfjnvSmOFDTSMVssPr6p7uM9ZE0=" name="csrf-token" />
+</head>
+<body>
+
+<h1>Listing restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Review</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td>Chipotle</td>
+    <td>Philadelphia</td>
+    <td>yummy burritos</td>
+    <td><a href="/restaurants/4">Show</a></td>
+    <td><a href="/restaurants/4/edit">Edit</a></td>
+    <td><a href="/restaurants/4" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+  </tr>
+</table>
+
+<br />
+
+<a href="/restaurants/new">New Restaurant</a>
+
+
+</body>
+</html>
+
+********************************************************************************
+
+GET REQUEST (gets a single resource, the new restaurant "Chipotle")
+
+hrs356:expenseapp Annie$ curl localhost:3000/restaurants/4
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenseapp</title>
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/app.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/entries.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/foundation.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/ie.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/restaurants.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/app.js?body=1" type="text/javascript"></script>
+<script src="/assets/entries.js?body=1" type="text/javascript"></script>
+<script src="/assets/foundation.js?body=1" type="text/javascript"></script>
+<script src="/assets/restaurants.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="HN9OU3+QtMjVcL64U1lHJEllCw4Gwa9bzRdaM0x4c0A=" name="csrf-token" />
+</head>
+<body>
+
+<p id="notice"></p>
+
+<p>
+  <b>Name:</b>
+  Chipotle
+</p>
+
+<p>
+  <b>Location:</b>
+  Philadelphia
+</p>
+
+<p>
+  <b>Review:</b>
+  yummy burritos
+</p>
+
+
+<a href="/restaurants/4/edit">Edit</a> |
+<a href="/restaurants">Back</a>
+
+
+</body>
+</html>
+
+********************************************************************************
+
+PUT REQUEST (updates the existing restaurant resources "Chipotle" by modifying the review parameter)
+
+hrs356:expenseapp Annie$ curl -X PUT -d "restaurant[review]=extremely+yummy+burritos" localhost:3000/restaurants/4
+<html><body>You are being <a href="http://localhost:3000/restaurants/4">redirected</a>.</body></html>hrs356:expenseapp Annie$ 
+
+********************************************************************************
+
+GET REQUEST (gets the "Chipotle" resource again to show that the review parameter has been modified after the PUT request)
+
+hrs356:expenseapp Annie$ curl localhost:3000/restaurants/4
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenseapp</title>
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/app.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/entries.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/foundation.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/ie.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/restaurants.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/app.js?body=1" type="text/javascript"></script>
+<script src="/assets/entries.js?body=1" type="text/javascript"></script>
+<script src="/assets/foundation.js?body=1" type="text/javascript"></script>
+<script src="/assets/restaurants.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="qx/Aot/G/tF4Nr6ei8H38Zik3ztbBAD1conISmaRwrE=" name="csrf-token" />
+</head>
+<body>
+
+<p id="notice"></p>
+
+<p>
+  <b>Name:</b>
+  Chipotle
+</p>
+
+<p>
+  <b>Location:</b>
+  Philadelphia
+</p>
+
+<p>
+  <b>Review:</b>
+  extremely yummy burritos
+</p>
+
+
+<a href="/restaurants/4/edit">Edit</a> |
+<a href="/restaurants">Back</a>
+
+
+</body>
+</html>
+
+********************************************************************************
+
+DELETE REQUEST (deletes the "Chipotle" restaurant from the list of restaurants)
+
+hrs356:expenseapp Annie$ curl -X DELETE localhost:3000/restaurants/4
+<html><body>You are being <a href="http://localhost:3000/restaurants">redirected</a>.</body></html>hrs356:expenseapp Annie$ 
+
+********************************************************************************
+
+GET REQUEST (requests list of restaurants again to show that "Chipotle" has been deleted from the list of restaurants)
+
+hrs356:expenseapp Annie$ curl localhost:3000/restaurants
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenseapp</title>
+  <link href="/assets/application.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/app.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/entries.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/foundation.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/ie.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/restaurants.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/scaffolds.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/app.js?body=1" type="text/javascript"></script>
+<script src="/assets/entries.js?body=1" type="text/javascript"></script>
+<script src="/assets/foundation.js?body=1" type="text/javascript"></script>
+<script src="/assets/restaurants.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="N1w4BDaWQyMABsMYJWJs2JVcEfNzXViE36OkFKeuJSU=" name="csrf-token" />
+</head>
+<body>
+
+<h1>Listing restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Review</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+</table>
+
+<br />
+
+<a href="/restaurants/new">New Restaurant</a>
+
+
+</body>
+</html>
