@@ -1,0 +1,9 @@
+Annie Lee
+CIS 196 
+February 6th, 2011
+Ruby Lab 1
+
+github URL: https://github.com/yannie/expenseapp
+
+1. Both methods are located in the Lab1.rb file.
+2. The double_open file uses file1.txt and file2.txt
