@@ -22,13 +22,12 @@
 			<h3>Assignments</h3>
 			<dl class="tabs">
 				<dd><a href="#hw1">Assignment 1</a></dd>
-				<dd><a href="#hw2">Assignment 2</a></dd>
-				<dd><a href="#rails_models" class="active">Rails Models</a></dd>
+				<dd><a href="#hw2" class="active">Assignment 2</a></dd>
 			</dl>
 			
 			<ul class="tabs-content">
 				<li id="hw1Tab"><img src="http://www.lolcats.com/images/u/09/08/lolcatsdotcomhqjbsna7fyj5zgwt.jpg" alt="LOLCat"/></li>
-				<li id="hw2Tab">
+				<li id="hw2Tab" class="active">
 					<p>Check out <a href="http://www.seriouseats.com/">Serious Eats</a> for food recommendations!</p>
 					<h4>Add a new restaurant!</h4>
 					<form class="nice">
@@ -47,13 +46,6 @@
 						<label>Food Review</label>
 						<textarea placeholder="Review of dishes tried..."></textarea>
 					</form>
-				</li>
-				<li id="rails_modelsTab" class="active">
-				  <ul>
-				    <li><a href="http://annie-expenseapp.herokuapp.com/users">Users Scaffold</a></li>
-				    <p>This scaffold is used for creating users for the app. It contains the user's name and email address for login purposes.</p>
-				    <li><a href="http://annie-expenseapp.herokuapp.com/restaurants">Restaurants Scaffold</a></li>
-				    <p>This scaffold is used for adding restaurant reviews. It contains information regarding the restaurant name, location, date, rating, and review. Each restaurant entry is also mapped to a user.</p>
 				</li>
 			</ul>
 		</div>
