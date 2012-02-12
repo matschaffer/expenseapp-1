@@ -3,9 +3,15 @@
 one:
   name: MyString
   location: MyString
-  review: MyText
+  date: 2012-02-11
+  rating: 1
+  review: MyString
+  user: 
 
 two:
   name: MyString
   location: MyString
-  review: MyText
+  date: 2012-02-11
+  rating: 1
+  review: MyString
+  user: 

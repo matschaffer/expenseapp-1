@@ -11,21 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120123055314) do
+ActiveRecord::Schema.define(:version => 20120212042925) do
 
   create_table "entries", :force => true do |t|
     t.string   "description"
     t.decimal  "amount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "restaurants", :force => true do |t|
     t.string   "name"
     t.string   "location"
-    t.text     "review"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.date     "date"
+    t.integer  "rating"
+    t.string   "review"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "restaurants", ["user_id"], :name => "index_restaurants_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

@@ -4,7 +4,10 @@
   <tr>
     <th>Name</th>
     <th>Location</th>
+    <th>Date</th>
+    <th>Rating</th>
     <th>Review</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +17,10 @@
   <tr>
     <td><%= restaurant.name %></td>
     <td><%= restaurant.location %></td>
+    <td><%= restaurant.date %></td>
+    <td><%= restaurant.rating %></td>
     <td><%= restaurant.review %></td>
+    <td><%= restaurant.user %></td>
     <td><%= link_to 'Show', restaurant %></td>
     <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
     <td><%= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete %></td>
