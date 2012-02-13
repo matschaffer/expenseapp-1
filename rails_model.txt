@@ -1,0 +1,13 @@
+Annie Lee
+CIS 196
+February 13th, 2011
+Rails Models
+
+github URL: https://github.com/yannie/expenseapp
+heroku URL: http://annie-expenseapp.herokuapp.com/
+
+Decided not to map the root of my application to one of my scaffold index pages because I made separate tabs on my index.html for each assignment. I added a new tab for the scaffold index pages instead with descriptions of each model's intended purpose.
+
+In case you aren't able to access the index.html, the scaffold index pages are:
+http://annie-expenseapp.herokuapp.com/users
+http://annie-expenseapp.herokuapp.com/restaurants
