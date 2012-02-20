@@ -1,6 +1,5 @@
-<h1>Listing restaurants</h1>
+<h1>Listing restaurants</h1>
 
-<div class="container">
 <table>
   <tr>
     <th>Name</th>
@@ -13,7 +12,6 @@
     <th></th>
     <th></th>
   </tr>
-</div>
 
 <% @restaurants.each do |restaurant| %>
   <tr>
@@ -22,7 +20,7 @@
     <td><%= restaurant.date %></td>
     <td><%= restaurant.rating %></td>
     <td><%= restaurant.review %></td>
-    <td><%= link_to restaurant.user.name, restaurant.user %></td>
+    <td><%= restaurant.user %></td>
     <td><%= link_to 'Show', restaurant %></td>
     <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
     <td><%= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete %></td>
@@ -33,7 +31,3 @@
 <br />
 
 <%= link_to 'New Restaurant', new_restaurant_path %>
-
-<br />
-
-<%= link_to 'Back to Users', users_path %>
