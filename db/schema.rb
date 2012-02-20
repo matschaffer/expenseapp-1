@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120212042925) do
 
-  create_table "entries", :force => true do |t|
-    t.string   "description"
-    t.decimal  "amount"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "restaurants", :force => true do |t|
     t.string   "name"
     t.string   "location"
