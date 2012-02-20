@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+<<<<<<< HEAD
 <<<<<<< HEAD:app/views/restaurants/_form.html.erb
   <div class="field">
     <%= f.label :name %>
@@ -19,6 +20,8 @@
     <%= f.label :location %>
     <%= f.text_field :location, class: 'large input-text'%>
 =======
+=======
+>>>>>>> b0aa3d773af1d22bf0492b6035168f5f83b8fc63
 
   <div class="field">
     <%= f.label :name %><br />
@@ -27,6 +30,7 @@
   <div class="field">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
+<<<<<<< HEAD
 >>>>>>> bc99d0c355f90d581a8f159cd10e2b65694cf23e:app/views/restaurants/_form.html.erb~
   </div>
   <div class="field">
@@ -46,6 +50,14 @@
     <%= f.label :user_id %>
     <%= f.collection_select :user_id, User.all, :id, :name %>
 =======
+=======
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+>>>>>>> b0aa3d773af1d22bf0492b6035168f5f83b8fc63
     <%= f.label :rating %><br />
     <%= f.number_field :rating %>
   </div>
@@ -56,9 +68,15 @@
   <div class="field">
     <%= f.label :user %><br />
     <%= f.text_field :user %>
+<<<<<<< HEAD
 >>>>>>> bc99d0c355f90d581a8f159cd10e2b65694cf23e:app/views/restaurants/_form.html.erb~
   </div>
   <div class="actions">
     <%= f.submit class: 'medium nice blue radius button'%>
+=======
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+>>>>>>> b0aa3d773af1d22bf0492b6035168f5f83b8fc63
   </div>
 <% end %>
