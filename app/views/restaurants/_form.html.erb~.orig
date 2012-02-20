@@ -1,0 +1,64 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<<<<<<< HEAD:app/views/restaurants/_form.html.erb
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'input-text' %>
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'large input-text'%>
+=======
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+>>>>>>> bc99d0c355f90d581a8f159cd10e2b65694cf23e:app/views/restaurants/_form.html.erb~
+  </div>
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+<<<<<<< HEAD:app/views/restaurants/_form.html.erb
+    <%= f.label :rating %>
+    <%= f.number_field :rating, :in => 1...4 %>
+  </div>
+  <div class="field">
+    <%= f.label :review %>
+    <%= f.text_area :review %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+=======
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br />
+    <%= f.text_field :review %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+>>>>>>> bc99d0c355f90d581a8f159cd10e2b65694cf23e:app/views/restaurants/_form.html.erb~
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'medium nice blue radius button'%>
+  </div>
+<% end %>
