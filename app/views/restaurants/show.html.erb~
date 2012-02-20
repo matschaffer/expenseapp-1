@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
 <p>
   <b>Name:</b>
   <%= @restaurant.name %>
@@ -28,10 +27,9 @@
 
 <p>
   <b>User:</b>
-  <%= @restaurant.user.name %>
+  <%= @restaurant.user %>
 </p>
 
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
-</div>
